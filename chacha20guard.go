@@ -40,10 +40,9 @@ var (
 	ErrInvalidRounds = errors.New("invalid rounds number (must be 8, 12, or 20)")
 )
 
-// New creates and returns a new cipher.Stream. The key argument must be 256
+// New creates and returns a new cipher.Stream. The key must be 256
 // bits long, and the nonce argument must be 64 bits long. The nonce must be
-// randomly generated or used only once. This Stream instance must not be used
-// to encrypt more than 2^70 bytes (~1 zettabyte).
+// randomly generated or used only once.
 func New(key *memguard.LockedBuffer, nonce []byte) (cipher.Stream, error) {
 	return NewWithRounds(key, nonce, 20)
 }
@@ -70,10 +69,8 @@ func NewWithRounds(key *memguard.LockedBuffer, nonce []byte, rounds uint8) (ciph
 	return s, nil
 }
 
-// NewX creates and returns a new cipher.Stream. The key argument must be
-// 256 bits long, and the nonce argument must be 192 bits long. The nonce must
-// be randomly generated or only used once. This Stream instance must not be
-// used to encrypt more than 2^70 bytes (~1 zetta byte).
+// NewX creates and returns a new cipher.Stream. The key must be
+// 256 bits long, and the nonce argument must be 192 bits long.
 func NewX(key *memguard.LockedBuffer, nonce []byte) (cipher.Stream, error) {
 	return NewXWithRounds(key, nonce, 20)
 }

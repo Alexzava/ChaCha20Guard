@@ -6,6 +6,8 @@ Before using read the [Warning](README.md#Warning)
 
 The implementation is based on [https://github.com/codahale/chacha20](https://github.com/codahale/chacha20)
 
+<a href="https://godoc.org/github.com/alexzava/ChaCha20Guard"><img src="https://godoc.org/github.com/alexzava/ChaCha20Guard?status.svg"></a>
+
 ## Download/Install
 ```
 go get -u github.com/alexzava/chacha20guard
